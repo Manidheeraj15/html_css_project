@@ -26,15 +26,13 @@ header {
 header .logo {
   background-image: url("https://upload.wikimedia.org/wikipedia/commons/0/02/Computer_science_education.png   ");
   background-repeat: no-repeat;
-  /* background-attachment: fixed;  */
-  background-position:center;
-  background-size: cover;
-
+  background-attachment: fixed;
+  background-position: center;
   background-color: hsl(0,0,0,0.9);
   position: relative;
   width:auto;
   min-height: 40vh;
-  height: 50vh;
+  height: 100%;
   max-height: 50vh;
   display: flex;
   flex-direction: column;
@@ -78,9 +76,7 @@ button:hover{
   font-size: medium;
 
 }
-section#overview{
-  margin-top: -20px;
-}
+
 header h1 {
   margin: 10px 0;
 }
@@ -96,7 +92,7 @@ nav ul {
 
 nav ul li {
   display: inline;
-  margin: 0 15px;
+    margin: 0 15px;
   padding-bottom: 5px;
 }
 
@@ -118,12 +114,17 @@ nav ul li a[tabindex]:focus{
   background-color: blue;
 }
 main {
-  padding: 20px;
+  padding: 0 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px
 }
-
+.active{
+  background-color: blue;
+}
 section {
   background-color: white;
-  margin: 20px 0;
+  margin: 0px 0;
   padding: 20px;
   border-radius: 8px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -150,7 +151,7 @@ section {
 article {
   width: 270px;
   height: 250px;
-  background-color: #ceb7b7;
+  background-color: #f4f4f4;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -195,21 +196,18 @@ footer {
 #about div{
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
   justify-content: center;
-  align-items: center;
 
+
+ 
   }
-#above h2{
-  color: blue
-}
 iframe{
     aspect-ratio: 2/1;
     width: 50%;
     height: 100%;
-    position: center;
   
 }
-
 footer > div{
   display:flex;
   align-items: center;
@@ -236,10 +234,86 @@ footer a{
 .icon_insta:hover{
   transform: translateY(-10px);
 }
-
 @media (max-width: 768px) {
   nav ul li {
       display: block;
       margin: 10px 0;
+  }
+}
+.application_form_wrapper{
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+.form-container {
+  width: 100%;
+  max-width: 600px;
+  padding: 20px;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+.form-container h2 {
+  text-align: center;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="date"],
+textarea {
+  width: 100%;
+  padding: 10px;
+  margin: 5px 0;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+input[type="file"] {
+  padding: 10px;
+  margin-top: 5px;
+}
+
+textarea {
+  height: 100px;
+  resize: vertical;
+}
+
+button[type="submit"] {
+  width: 100%;
+  background-color: #b4b4b4;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button[type="submit"]:hover {
+  background-color: #45a049;
+}
+
+.required {
+  color: red;
+}
+
+@media (max-width: 600px) {
+  .form-container {
+      padding: 15px;
   }
 }
